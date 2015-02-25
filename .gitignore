@@ -1,0 +1,35 @@
+# Local configurations
+*.local.xml
+.attach*
+
+*.class
+
+# Log files #
+*.log
+
+# Eclipse Project Files #
+.project
+.settings/
+.classpath
+.pmd
+
+# Netbeans files #
+nbactions.xml
+nb-configuration.xml
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Frontend generated sources
+
+# Build Directories #
+target/
+bin/
+
+# Package Files #
+*.war
+*.jar
+*.ear
+build.bat
+eclipse.bat
