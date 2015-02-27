@@ -1,6 +1,8 @@
 # Local configurations
 *.local.xml
 .attach*
+.classpath
+.project
 
 *.class
 
