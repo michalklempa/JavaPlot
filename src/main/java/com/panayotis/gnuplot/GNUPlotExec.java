@@ -158,10 +158,14 @@ class GNUPlotExec {
                         while ((line = err.readLine()) != null)
                             if (!line.trim().equals(""))
                                 buf.append(line).append('\n');
-                        err.close();
                         msg.output = buf.toString(); // Store output stream
                     } catch (IOException ex) {
                         ex.printStackTrace(new PrintStream(System.out));
+                    } finally {
+                        try {
+                            err.close();
+                        } catch (IOException ex) {
+                        }
                     }
                 }
             };
@@ -177,7 +181,7 @@ class GNUPlotExec {
                 }
             };
             out_thread.start();
-
+            proc.getOutputStream().close();
             try {
                 proc.waitFor(); // wait for process to finish
                 out_thread.join();  // wait for output (terminal related) thread to finish
